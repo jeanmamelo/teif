@@ -27,7 +27,7 @@
     <!-- Menu -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-md-5 ">
 
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="../index">
             <img src="../assets/img/logo.png" alt="">
         </a>
 
@@ -45,7 +45,7 @@
             </div>
 
             <div>
-                <button onclick="location.href='login.php'" type="button" class="btn btn-login mx-md-3">Login</button>
+                <button onclick="location.href='login'" type="button" class="btn btn-login mx-md-3">Login</button>
                 <button type="button" class="btn btn-register">Criar conta</button>
                 <button type="button" class="btn btn-primary d-none">Registro</button>
             </div>
