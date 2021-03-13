@@ -8,19 +8,19 @@
     </ol>
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img src="src/assets/img/carousel01.png" class="d-block w-100 img-carousel" alt="...">
+            <img src="../assets/img/carousel01.png" class="d-block w-100 img-carousel" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="src/assets/img/carousel02.png" class="d-block w-100 img-carousel" alt="...">
+            <img src="../assets/img/carousel02.png" class="d-block w-100 img-carousel" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="src/assets/img/carousel03.png" class="d-block w-100 img-carousel" alt="...">
+            <img src="../assets/img/carousel03.png" class="d-block w-100 img-carousel" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="src/assets/img/carousel04.png" class="d-block w-100 img-carousel" alt="...">
+            <img src="../assets/img/carousel04.png" class="d-block w-100 img-carousel" alt="...">
         </div>
         <div class="carousel-item">
-            <img src="src/assets/img/carousel05.png" class="d-block w-100 img-carousel" alt="...">
+            <img src="../assets/img/carousel05.png" class="d-block w-100 img-carousel" alt="...">
         </div>
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
