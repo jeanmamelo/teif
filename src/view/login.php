@@ -22,13 +22,6 @@ require_once 'partials/head.php';
                     <input type="password" name="password" placeholder="Senha">
                     <p class="text-muted">Ainda não possui conta? <a class="forgot text-muted" href="#"> Cadastre-se </a></p>
                     <input type="submit" name="login" value="Login" href="#" form="loginForm">
-                    <div class="col-md-12">
-                        <ul class="social-network social-circle">
-                            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fab fa-facebook-f"></i></a></li>
-                            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fab fa-twitter"></i></a></li>
-                            <li><a href="#" class="icoGoogle" title="Google +"><i class="fab fa-google-plus"></i></a></li>
-                        </ul>
-                    </div>
                 </form>
             </div>
         </div>
