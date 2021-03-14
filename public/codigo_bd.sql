@@ -1,19 +1,19 @@
--- Eduardo Fiorito Junior, Henrique da Veiga Moreira, João Victor Castro de Oliveira , Leonardo de Souza Camargo, Thomas Adam da Costa e Waislan Luis Sanches --
+-- Eduardo Fiorito, Henrique da Veiga, Jean Melo, João Victor, Leonardo de Souza, Thomas Adam, Waislan Sanches, William Manoel e Yuri Fernandes --
 
 -- criando o BD--
 create database  teif
 default character set utf8mb4
 default collate utf8mb4_general_ci;
 
-
 use teif;
 
 -- criando / alterando as tabelas e inserindo valores --
 create table representante(
-cpf_representante varchar(30) NOT NULL ,
-nome varchar(30) NOT NULL,
-email varchar(30) NOT NULL,
-celular int NOT NULL,
+cpf_representante varchar(30) NOT NULL,
+nome varchar(60) NOT NULL,
+email varchar(60) NOT NULL,
+celular int NULL,
+senha varchar(30) NOT NULL,
 primary key(cpf_representante)
 )default charset = utf8mb4;
 
@@ -42,7 +42,7 @@ id_modalidade int,
 foreign key fk_id_modalidade (id_modalidade) references modalidade (id_modalidade)
 );
 
-ALTER TABLE equipe  add constraint fk_cpf_representante foreign key (fk_cpf_representante) references representante(cpf_representante) ON DELETE CASCADE
+ALTER TABLE equipe add constraint fk_cpf_representante foreign key (fk_cpf_representante) references representante(cpf_representante) ON DELETE CASCADE
 ON UPDATE CASCADE;
 
 
@@ -109,19 +109,20 @@ primary key(cpf_lol)
 
 -- inserindo dados nas tabelas--
 insert into representante
-(cpf_representante,nome,celular,email)
+(cpf_representante,nome,email,celular,senha)
 values
-('10189956587','Fernando Alvarenga', '999993333','joel@gmail.com');
+('10189956587','Fernando Alvarenga','joel@gmail.com','999993333','fer123');
 
 insert into representante
-(cpf_representante,nome,celular,email)
+(cpf_representante,nome,email,celular,senha)
 values
-('13015009988','Marcos Vinicius', '888883333','mv@gmail.com');
+('13015009988','Marcos Vinicius','mv@gmail.com','888883333','marcos123');
 
 insert into representante
-(cpf_representante,nome,celular,email)
+(cpf_representante,nome,email,celular,senha)
 values
-('20611187928','Maria Cristina Azevedo', '898989898','mazevedo@gmail.com');
+('20611187928','Maria Cristina Azevedo','mazevedo@gmail.com','898989898','maria123');
+
 
 insert into equipe
 (id_equipe,nome_equipe,sigla,faculdade,facebook,fk_cpf_representante)
@@ -155,6 +156,7 @@ insert into jogador_clash
 (cpf_clash,nome_clash,email_clash,comprovante_matricula,nick,id_equipe)
 values
 ('26620050530','Caio', 'caio@live.com','caio.pdf', 'cct22','3');
+
 
 insert into modalidade
 (id_modalidade,nome_modalidade,valor_inscricao,regulamento)
@@ -197,6 +199,7 @@ insert into participa
 values
 ('1','01');
 
+
 insert into jogador_csgo
 (cpf_csgo, nome_csgo, email_csgo, comprovante_matricula_csgo, titular_csgo, steam_link, id_equipe)
 values
@@ -212,12 +215,14 @@ insert into jogador_csgo
 values
 ('10122288820', 'Ignacio Meyern', 'meyern@live.com','meyern.pdf', '1', 'steam.com/mey', '1');
 
+
 insert into jogador_fifa
 (cpf_fifa, nome_fifa, email_fifa, comprovante_matricula_fifa, psn, id_equipe)
 values
 ('64272391087', 'Victor Xavier', 'victor@live.com', 'victor.pdf', 'www.playstation.com/vicX', '1'),
 ('13303945013', 'Felipe Alves', 'felipealves@live.com', 'felipealves.pdf', 'www.playstation.com/fpal', '2'),
 ('11109923677', 'Ana Paula', 'ana@live.com', 'Ana.pdf', 'www.playstation.com/ana77', '3');
+
 
 insert into jogador_lol
 (cpf_lol, nome_lol, email_lol, comprovante_matricula_lol, nome_invocador, id_equipe)
@@ -226,12 +231,14 @@ values
 ('11155562369', 'Paula Ramos', 'paula@live.com', 'paula.pdf', 'paulinhaCC', '1'),
 ('05688812624', 'Pedro Ruiz', 'pedro@live.com', 'pedro.pdf',  'pedro456', '1');
 
+
 insert into jogador_hs
 (cpf_hs, nome_hs, email_hs, comprovante_matricula_hs, battle_net, id_equipe)
 values
 ('12398754645', 'Maria Fernanda Junqueira', 'mariafj@live.com', 'maria.pdf', 'battle.net/mariafj', '1'),
 ('07764250533', 'Gabriele Morais', 'gabriele@live.com', 'gabriele.pdf', 'battle.net/gabiM', '2'),
 ('22211101188', 'Pedro Antonio', 'pedro@live.com', 'pedro.pdf', 'battle.net/pedroF', '3');
+
 
 -- consultas simples--
 select id_equipe,id_modalidade from participa;
@@ -278,6 +285,3 @@ FROM jogador_fifa inner join equipe
 where jogador_fifa.id_equipe = equipe.id_equipe;
 
 select * from Jogadorfifa;
-
-
-
