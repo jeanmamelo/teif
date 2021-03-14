@@ -1,10 +1,10 @@
 <?php
 
-$dbServername =  "localhost";
-$dbUsername = "admin";
-$dbPassword = "root";
-$dbName = "teif";
+  $dbServername =  "localhost";
+  $dbUsername = "root";
+  $dbPassword = "";
+  $dbName = "teif";
 
-$conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
+  $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 
 ?>
