@@ -4,7 +4,7 @@ body {
 }
 
 p {
-    margin: 0 ;
+    margin: 0;
 }
 
 .bg-dark {
@@ -13,6 +13,7 @@ p {
 }
 
 /*  navbar  */
+
 .navbar-dark .navbar-nav .nav-link {
     color: #d9d9d9;
     font-size: 1.125rem
