@@ -25,9 +25,9 @@
             </div>
 
             <div>
-                <a href="login"><button type="button" class="btn btn-login mx-md-3">Login</button></a>
-                <a href="register"><button type="button" class="btn btn-register">Criar conta</button></a>
-                <button type="button" class="btn btn-primary d-none">Registro</button>
+                <a href="login" type="button" class="btn btn-login font-weight-bold mx-md-3">Login</a>
+                <a href="register" type="button" class="btn btn-register font-weight-bold mr-md-3">Criar conta</a>
+                <a href="" type="button" class="btn btn-register font-weight-bold d-none">Inscreva-se</a>
             </div>
         </div>
 
