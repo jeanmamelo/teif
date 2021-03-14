@@ -25,8 +25,8 @@
             </div>
 
             <div>
-                <button onclick="location.href='login'" type="button" class="btn btn-login mx-md-3">Login</button>
-                <button type="button" class="btn btn-register">Criar conta</button>
+                <a href="login"><button type="button" class="btn btn-login mx-md-3">Login</button></a>
+                <a href="register"><button type="button" class="btn btn-register">Criar conta</button></a>
                 <button type="button" class="btn btn-primary d-none">Registro</button>
             </div>
         </div>
