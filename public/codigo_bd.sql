@@ -23,7 +23,7 @@ nome_equipe varchar(30) NOT NULL,
 sigla varchar(7) NOT NULL,
 faculdade varchar(30) NOT NULL,
 facebook varchar(30) NOT NULL,
-fk_cpf_representante varchar(30),
+fk_cpf_representante varchar(30), 
 primary key(id_equipe)
 )default charset = utf8mb4;
 
@@ -50,9 +50,9 @@ create table JOGADOR_CLASH(
 cpf_clash varchar(30),
 nome_clash varchar(30) NOT NULL,
 email_clash varchar(30) NOT NULL,
-comprovante_matricula varchar(30) NOT NULL,
-titular_clash enum ('S','N') NOT NULL,
+comprovante_matricula varchar(50) NOT NULL,
 nick varchar(30) NOT NULL,
+ra_clash varchar(20) NOT NULL,
 id_equipe int,
 foreign key fk_id_equipe_clash (id_equipe) references equipe (id_equipe),
 primary key(cpf_clash)
@@ -62,9 +62,9 @@ create table JOGADOR_FIFA(
 cpf_fifa varchar(30),
 nome_fifa varchar(30) NOT NULL,
 email_fifa varchar(30) NOT NULL,
-comprovante_matricula_fifa varchar(30) NOT NULL,
-titular_fifa enum ('S','N') NOT NULL,
+comprovante_matricula_fifa varchar(50) NOT NULL,
 psn varchar(30) NOT NULL,
+ra_fifa varchar(20) NOT NULL,
 id_equipe int,
 foreign key fk_id_equipe_fifa (id_equipe) references equipe (id_equipe),
 primary key(cpf_fifa)
@@ -74,9 +74,9 @@ create table JOGADOR_HS(
 cpf_hs varchar(30),
 nome_hs varchar(30) NOT NULL,
 email_hs varchar(30) NOT NULL,
-comprovante_matricula_hs varchar(30) NOT NULL,
-titular_hs enum ('S','N') NOT NULL,
+comprovante_matricula_hs varchar(50) NOT NULL,
 battle_net varchar(30) NOT NULL,
+ra_hs varchar(20) NOT NULL,
 id_equipe int,
 foreign key fk_id_equipe_hs (id_equipe) references equipe (id_equipe),
 primary key(cpf_hs)
@@ -86,9 +86,9 @@ create table JOGADOR_CSGO(
 cpf_csgo varchar(30),
 nome_csgo varchar(30) NOT NULL,
 email_csgo varchar(30) NOT NULL,
-comprovante_matricula_csgo varchar(30) NOT NULL,
-titular_csgo enum ('S','N') NOT NULL,
+comprovante_matricula_csgo varchar(50) NOT NULL,
 steam_link varchar(30) NOT NULL,
+ra_csgo varchar(20) NOT NULL,
 id_equipe int,
 foreign key fk_id_equipe_csgo (id_equipe) references equipe (id_equipe),
 primary key(cpf_csgo)
@@ -99,8 +99,8 @@ cpf_lol varchar(30),
 nome_lol varchar(30) NOT NULL,
 email_lol varchar(30) NOT NULL,
 comprovante_matricula_lol varchar(30) NOT NULL,
-titular_lol enum ('S','N') NOT NULL,
 nome_invocador varchar(30) NOT NULL,
+ra_lol varchar(20) NOT NULL,
 id_equipe int,
 foreign key fk_id_equipe_lol (id_equipe) references equipe (id_equipe),
 primary key(cpf_lol)
@@ -141,21 +141,21 @@ values
 
 
 insert into jogador_clash
-(cpf_clash,nome_clash,email_clash,comprovante_matricula,nick,id_equipe)
+(cpf_clash,nome_clash,email_clash,comprovante_matricula,nick,id_equipe,ra_clash)
 values
-('50420280699','Felipe', 'felipe@live.com','felipe.pdf', 'felipm','1');
+('50420280699','Felipe', 'felipe@live.com','felipe.pdf', 'felipm','1','1410000012');
 
 
 insert into jogador_clash
-(cpf_clash,nome_clash,email_clash,comprovante_matricula,nick,id_equipe)
+(cpf_clash,nome_clash,email_clash,comprovante_matricula,nick,id_equipe,ra_clash)
 values
-('26610150530','Natalia', 'natalia@live.com','nat.pdf', 'nat22','2');
+('26610150530','Natalia', 'natalia@live.com','nat.pdf', 'nat22','2','1410000013');
 
 
 insert into jogador_clash
-(cpf_clash,nome_clash,email_clash,comprovante_matricula,nick,id_equipe)
+(cpf_clash,nome_clash,email_clash,comprovante_matricula,nick,id_equipe,ra_clash)
 values
-('26620050530','Caio', 'caio@live.com','caio.pdf', 'cct22','3');
+('26620050530','Caio', 'caio@live.com','caio.pdf', 'cct22','3','1410000014');
 
 
 insert into modalidade
@@ -201,43 +201,43 @@ values
 
 
 insert into jogador_csgo
-(cpf_csgo, nome_csgo, email_csgo, comprovante_matricula_csgo, titular_csgo, steam_link, id_equipe)
+(cpf_csgo, nome_csgo, email_csgo, comprovante_matricula_csgo, steam_link, id_equipe,ra_csgo)
 values
-('11111111120', 'Fernando Alvarenga', 'fer@live.com','fer.pdf', '1', 'steam.com/fer', '1');
+('11111111120', 'Fernando Alvarenga', 'fer@live.com','fer.pdf', 'steam.com/fer', '1', '14100000000');
 
 insert into jogador_csgo
-(cpf_csgo, nome_csgo, email_csgo, comprovante_matricula_csgo, titular_csgo, steam_link, id_equipe)
+(cpf_csgo, nome_csgo, email_csgo, comprovante_matricula_csgo, steam_link, id_equipe,ra_csgo)
 values
-('21248212525', 'Gabriel Toledo', 'fallen@live.com','fallen.pdf', '1', 'steam.com/fallen', '1');
+('21248212525', 'Gabriel Toledo', 'fallen@live.com','fallen.pdf', 'steam.com/fallen', '1','14100000001');
 
 insert into jogador_csgo
-(cpf_csgo, nome_csgo, email_csgo, comprovante_matricula_csgo, titular_csgo, steam_link, id_equipe)
+(cpf_csgo, nome_csgo, email_csgo, comprovante_matricula_csgo, steam_link, id_equipe,ra_csgo)
 values
-('10122288820', 'Ignacio Meyern', 'meyern@live.com','meyern.pdf', '1', 'steam.com/mey', '1');
+('10122288820', 'Ignacio Meyern', 'meyern@live.com','meyern.pdf', 'steam.com/mey', '1','14100000002');
 
 
 insert into jogador_fifa
-(cpf_fifa, nome_fifa, email_fifa, comprovante_matricula_fifa, psn, id_equipe)
+(cpf_fifa, nome_fifa, email_fifa, comprovante_matricula_fifa, psn, id_equipe,ra_fifa)
 values
-('64272391087', 'Victor Xavier', 'victor@live.com', 'victor.pdf', 'www.playstation.com/vicX', '1'),
-('13303945013', 'Felipe Alves', 'felipealves@live.com', 'felipealves.pdf', 'www.playstation.com/fpal', '2'),
-('11109923677', 'Ana Paula', 'ana@live.com', 'Ana.pdf', 'www.playstation.com/ana77', '3');
+('64272391087', 'Victor Xavier', 'victor@live.com', 'victor.pdf', 'www.playstation.com/vicX', '1', '14100000003'),
+('13303945013', 'Felipe Alves', 'felipealves@live.com', 'felipealves.pdf', 'www.playstation.com/fpal', '2','14100000004'),
+('11109923677', 'Ana Paula', 'ana@live.com', 'Ana.pdf', 'www.playstation.com/ana77', '3','14100000005');
 
 
 insert into jogador_lol
-(cpf_lol, nome_lol, email_lol, comprovante_matricula_lol, nome_invocador, id_equipe)
+(cpf_lol, nome_lol, email_lol, comprovante_matricula_lol, nome_invocador, id_equipe,ra_lol)
 values
-('20611187929', 'Maria Cristina Azevedo', 'mca@live.com', 'maria.pdf', 'mca', '1'),
-('11155562369', 'Paula Ramos', 'paula@live.com', 'paula.pdf', 'paulinhaCC', '1'),
-('05688812624', 'Pedro Ruiz', 'pedro@live.com', 'pedro.pdf',  'pedro456', '1');
+('20611187929', 'Maria Cristina Azevedo', 'mca@live.com', 'maria.pdf', 'mca','1', '14100000006'),
+('11155562369', 'Paula Ramos', 'paula@live.com', 'paula.pdf', 'paulinhaCC','2','141000000007'),
+('05688812624', 'Pedro Ruiz', 'pedro@live.com', 'pedro.pdf',  'pedro456','3',  '14100000008');
 
 
 insert into jogador_hs
-(cpf_hs, nome_hs, email_hs, comprovante_matricula_hs, battle_net, id_equipe)
+(cpf_hs, nome_hs, email_hs, comprovante_matricula_hs, battle_net, id_equipe,ra_hs)
 values
-('12398754645', 'Maria Fernanda Junqueira', 'mariafj@live.com', 'maria.pdf', 'battle.net/mariafj', '1'),
-('07764250533', 'Gabriele Morais', 'gabriele@live.com', 'gabriele.pdf', 'battle.net/gabiM', '2'),
-('22211101188', 'Pedro Antonio', 'pedro@live.com', 'pedro.pdf', 'battle.net/pedroF', '3');
+('12398754645', 'Maria Fernanda Junqueira', 'mariafj@live.com', 'maria.pdf', 'battle.net/mariafj', '1','14100000009'),
+('07764250533', 'Gabriele Morais', 'gabriele@live.com', 'gabriele.pdf', 'battle.net/gabiM', '2','14100000010'),
+('22211101188', 'Pedro Antonio', 'pedro@live.com', 'pedro.pdf', 'battle.net/pedroF', '3','14100000011');
 
 
 -- consultas simples--
