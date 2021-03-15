@@ -27,7 +27,7 @@
             <div>
                 <a href="login" type="button" class="btn btn-login font-weight-bold mx-md-3">Login</a>
                 <a href="register" type="button" class="btn btn-register font-weight-bold mr-md-3">Criar conta</a>
-                <a href="" type="button" class="btn btn-register font-weight-bold d-none">Inscreva-se</a>
+                <a href="sign-up#make-your-registration" type="button" class="btn btn-register font-weight-bold">Inscreva-se</a>
             </div>
         </div>
 
