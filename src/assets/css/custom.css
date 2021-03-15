@@ -175,3 +175,30 @@ p {
     box-shadow: 0 0 0 0.1rem rgb(91 201 85 / 25%)
 }
 
+/*  sign-up  */
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    font-size: 1.125rem;
+    background-color: #5bc955;
+    color: #141414;
+    text-transform: uppercase
+}
+
+.nav-pills .nav-link {
+    font-size: 1.125rem;
+    border-radius: .25rem;
+    color: #5bc955;
+    text-transform: uppercase
+}
+
+.primary-color {
+    color: #5bc955
+}
+
+.regulation-link:hover {
+    opacity: .6
+}
+
+.custom-img {
+    width: 300px
+}
