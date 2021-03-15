@@ -3,17 +3,18 @@ require_once 'partials/head.php';
 ?>
 
 <body>
-    <div class="d-flex align-items-center login-logoBar">
-        <a class="mx-auto" href="../index">
-            <img src="../assets/img/logo.png" alt="">
-        </a>
-    </div>
-
     <!-- Content-->
-    <div class="container login-middleContainer d-flex flex-column justify-content-center">
-        <div class="row">
-            <div class="col-12 col-md-6 offset-md-3 d-flex">
-                <form method="post" class="box mx-auto" id="registerForm" action="">
+    <div class="container d-flex flex-column justify-content-center">
+        <div class="row d-flex justify-content-center">
+            <div class="d-flex flex-column">
+
+                <div class="d-flex align-items-center justify-content-center mb-3 mt-2 mt-sm-4 mt-xl-5">
+                    <a href="../index">
+                        <img src="../assets/img/logo.png" alt="Logo do Teif">
+                    </a>
+                </div>
+
+                <form method="post" class="box" id="registerForm" action="">
                     <h1> Cadastro </h1>
                     <p> Preencha os dados abaixo </p>
 

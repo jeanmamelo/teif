@@ -3,17 +3,18 @@ require_once 'partials/head.php';
 ?>
 
 <body>
-    <div class="d-flex align-items-center login-logoBar">
-        <a class="mx-auto" href="../index">
-            <img src="../assets/img/logo.png" alt="">
-        </a>
-    </div>
-
     <!-- Content-->
-    <div class="container login-middleContainer d-flex flex-column justify-content-center">
-        <div class="row">
-            <div class="col-12 col-md-6 offset-md-3 d-flex">
-                <form method="post" class="box mx-auto" id="loginForm" action="">
+    <div class="container d-flex flex-column justify-content-center h-100">
+        <div class="row d-flex justify-content-center">
+            <div class="d-flex flex-column">
+
+                <div class="d-flex align-items-center justify-content-center mb-3">
+                    <a href="../index">
+                        <img src="../assets/img/logo.png" alt="Logo do Teif">
+                    </a>
+                </div>
+
+                <form method="post" class="box" id="loginForm" action="">
                     <h1> Login </h1>
 
                     <p> Já possiu uma conta? Logue-se </p>
