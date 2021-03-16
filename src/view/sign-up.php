@@ -6,7 +6,7 @@ require_once 'partials/carousel.php';
 <!-- Content-->
 <section class="container py-5">
     <h1 class="section-title h2 py-4" id="make-your-registration">Faça sua inscrição</h2>
-        <form action="../controller/cadastro-csgo.php" method="POST">
+        <form action="../controller/cadastro.php" method="POST">
             <div class="card bg-dark">
                 <div class="card-header">
                     <nav class="p-2">
@@ -48,7 +48,7 @@ require_once 'partials/carousel.php';
                             <div class="form-row py-2">
                                 <div class="form-group col-lg-4">
                                     <label class="font-weight-bold" name="team-representative-name" for="team-representative-name">Nome do Representante</label>
-                                    <input type="text" class="form-control" id="team-representative-name" placeholder="Digite o nome do representante" >
+                                    <input type="text" class="form-control" id="team-representative-name" placeholder="Chamar do BD o nome do Representante" >
                                 </div>
                                 <div class="form-group col-lg-4">
                                     <label class="font-weight-bold" name="team-representative-cellPhone" for="team-representative-cellPhone">Celular do Representante</label>
@@ -56,7 +56,7 @@ require_once 'partials/carousel.php';
                                 </div>
                                 <div class="form-group col-lg-4">
                                     <label class="font-weight-bold" name="team-representative-email" for="team-representative-email">Email do Representante</label>
-                                    <input type="email" class="form-control" id="team-representative-email" placeholder="nome@dominio.com" >
+                                    <input type="email" class="form-control" id="team-representative-email" placeholder="Chamar do BD o email do Representante" >
                                 </div>
                             </div>
                         </div>
