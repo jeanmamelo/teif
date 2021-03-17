@@ -13,7 +13,7 @@ cpf_representante varchar(30) NOT NULL,
 nome varchar(60) NOT NULL,
 email varchar(60) NOT NULL,
 celular int NULL,
-senha varchar(30) NOT NULL,
+senha varchar(100) NOT NULL,
 primary key(cpf_representante)
 )default charset = utf8mb4;
 

@@ -14,7 +14,7 @@ require_once 'partials/head.php';
                     </a>
                 </div>
 
-                <form method="post" class="box" id="registerForm" action="">
+                <form method="post" class="box" id="registerForm" action="../controller/register.php">
                     <h1> Cadastro </h1>
                     <p> Preencha os dados abaixo </p>
 
@@ -25,10 +25,10 @@ require_once 'partials/head.php';
                     <input type="email" name="email" id="email" placeholder="E-mail" maxlength="60" required>
 
                     <label hidden for="password">Senha</label>
-                    <input type="password" name="password" placeholder="Senha" maxlength="30" required>
+                    <input type="password" name="password" id="password" placeholder="Senha" maxlength="30" required>
 
                     <label hidden for="passwordConfirmation">Confirmar senha</label>
-                    <input type="password" name="passwordConfirmation" placeholder="Confirmar senha" maxlength="30" required>
+                    <input type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Confirmar senha" maxlength="30" required>
 
                     <label hidden for="cpf">CPF</label>
                     <input type="text" name="cpf" id="cpf" placeholder="CPF" pattern="[0-9]{11}" minlength="11" maxlength="11" required>

@@ -7,5 +7,5 @@ $dbName = "teif";
 try {
     $conn = mysqli_connect($dbServername, $dbUsername, $dbPassword, $dbName);
 } catch(Exception $e) {
-    die("Erro! Verifique a conexão com o banco de dados.");
+    die("Erro! Verifique a conexão com o banco de dados."); // tratar com echo, throw exception, etc...
 }
