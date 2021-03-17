@@ -1,4 +1,11 @@
 <?php
+session_start();
+if ($_SESSION['login'] !== session_id())
+{
+    unset($_SESSION['login']);
+    header('Location: index');
+}
+
 require_once 'partials/header.php';
 require_once 'partials/carousel.php';
 ?>

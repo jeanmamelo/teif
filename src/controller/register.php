@@ -26,7 +26,7 @@ try {
             $representative_name     = $_POST['name'];
             $representative_email    = $_POST['email'];
             $representative_password = md5($_POST['password']);
-            $representative_cpf      = $_POST['cpf'];
+            $representative_cpf      = (int)$_POST['cpf'];
 
             /**
              * Afected database:
@@ -71,5 +71,5 @@ try {
 }
 catch (Exception $e)
 {
-    die($e);
+    die('DEU ERRO DE BANCO DE DADOS EM: controller/register.php, ARRUMA ISSO AE MANO'); // tratar com echo, throw exception, etc...
 }

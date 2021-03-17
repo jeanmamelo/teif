@@ -1,4 +1,11 @@
 <?php
+session_start();
+if ($_SESSION['login'] !== session_id())
+{
+    unset($_SESSION['login']);
+    header('Location: index');
+}
+
 require_once 'partials/head.php';
 ?>
 
@@ -14,7 +21,7 @@ require_once 'partials/head.php';
                     </a>
                 </div>
 
-                <form method="post" class="box" id="loginForm" action="">
+                <form method="post" class="box" id="loginForm" action="../controller/login.php">
                     <h1> Login </h1>
 
                     <p> Já possiu uma conta? Logue-se </p>
@@ -23,11 +30,11 @@ require_once 'partials/head.php';
                     <input type="text" name="cpf" id="cpf" placeholder="CPF" pattern="[0-9]{11}" minlength="11" maxlength="11" required>
 
                     <label hidden for="password">Senha</label>
-                    <input type="password" name="password" placeholder="Senha" maxlength="30" required>
+                    <input type="password" name="password" placeholder="Senha" minlength="4" maxlength="30" required>
 
                     <p> Ainda não possui conta? <a class="under" href="register"> Cadastre-se </a></p>
 
-                    <input type="submit" name="login" value="Login" href="#" form="loginForm">
+                    <input type="submit" name="login" value="Login" form="loginForm">
                 </form>
             </div>
         </div>

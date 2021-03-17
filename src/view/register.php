@@ -1,4 +1,11 @@
 <?php
+session_start();
+if ($_SESSION['login'] !== session_id())
+{
+    unset($_SESSION['login']);
+    header('Location: index');
+}
+
 require_once 'partials/head.php';
 ?>
 
@@ -25,10 +32,10 @@ require_once 'partials/head.php';
                     <input type="email" name="email" id="email" placeholder="E-mail" maxlength="60" required>
 
                     <label hidden for="password">Senha</label>
-                    <input type="password" name="password" id="password" placeholder="Senha" maxlength="30" required>
+                    <input type="password" name="password" id="password" placeholder="Senha" minlength="4" maxlength="30" required>
 
                     <label hidden for="passwordConfirmation">Confirmar senha</label>
-                    <input type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Confirmar senha" maxlength="30" required>
+                    <input type="password" name="passwordConfirmation" id="passwordConfirmation" placeholder="Confirmar senha" minlength="4" maxlength="30" required>
 
                     <label hidden for="cpf">CPF</label>
                     <input type="text" name="cpf" id="cpf" placeholder="CPF" pattern="[0-9]{11}" minlength="11" maxlength="11" required>
