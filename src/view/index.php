@@ -1,10 +1,5 @@
 <?php
 session_start();
-if (isset($_SESSION['login']) && ($_SESSION['login'] !== session_id()))
-{
-    unset($_SESSION['login']);
-}
-
 require_once 'partials/header.php';
 require_once 'partials/carousel.php';
 ?>

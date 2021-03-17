@@ -25,13 +25,19 @@
             </div>
 
             <div>
+
                 <?php if (!isset($_SESSION['login'])): ?>
+                
                     <a href="login" type="button" class="btn btn-login font-weight-bold mx-md-3">Login</a>
                     <a href="register" type="button" class="btn btn-register font-weight-bold mr-md-3">Criar conta</a>
+
                 <?php else: ?>
+
                     <a href="sign-up#make-your-registration" type="button" class="btn btn-register font-weight-bold">Inscreva-se</a>
                     <a href="logout" type="button" class="btn btn-login font-weight-bold mx-md-3">Lougout</a>
+
                 <?php endif ?>
+
             </div>
         </div>
 

@@ -1,10 +1,5 @@
 <?php
 session_start();
-if (isset($_SESSION['login']) && ($_SESSION['login'] !== session_id()))
-{
-    unset($_SESSION['login']);
-}
-
 require_once 'partials/head.php';
 ?>
 
@@ -20,7 +15,7 @@ require_once 'partials/head.php';
                     </a>
                 </div>
 
-                <form method="post" class="box" id="loginForm" action="">
+                <form method="post" class="box" id="loginForm" action="../controller/login">
                     <h1> Login </h1>
 
                     <p> Já possiu uma conta? Logue-se </p>

@@ -1,8 +1,8 @@
 <?php
 session_start();
-if (isset($_SESSION['login']) && ($_SESSION['login'] !== session_id()))
-{
-    unset($_SESSION['login']);
+
+if (!$_SESSION['login']) {
+    header('Location: index');
 }
 
 require_once 'partials/header.php';
@@ -54,7 +54,7 @@ require_once 'partials/carousel.php';
                             <div class="form-row py-2">
                                 <div class="form-group col-lg-4">
                                     <label class="font-weight-bold" name="team-representative-name" for="team-representative-name">Nome do Representante</label>
-                                    <input type="text" class="form-control" id="team-representative-name" placeholder="Chamar do BD o nome do Representante" >
+                                    <input type="text" class="form-control" id="team-representative-name" placeholder="Chamar do BD o nome do Representante" value="<?php echo $_SESSION['representative_name'] ?>" >
                                 </div>
                                 <div class="form-group col-lg-4">
                                     <label class="font-weight-bold" name="team-representative-cellPhone" for="team-representative-cellPhone">Celular do Representante</label>
@@ -62,7 +62,7 @@ require_once 'partials/carousel.php';
                                 </div>
                                 <div class="form-group col-lg-4">
                                     <label class="font-weight-bold" name="team-representative-email" for="team-representative-email">Email do Representante</label>
-                                    <input type="email" class="form-control" id="team-representative-email" placeholder="Chamar do BD o email do Representante" >
+                                    <input type="email" class="form-control" id="team-representative-email" placeholder="Chamar do BD o email do Representante" value="<?php echo $_SESSION['representative_email'] ?>" >
                                 </div>
                             </div>
                         </div>

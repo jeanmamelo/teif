@@ -1,4 +1,5 @@
 <?php
+session_start();
 include_once '../model/conexao.php';
 
 /**
@@ -7,7 +8,7 @@ include_once '../model/conexao.php';
 try {
     if (!($_SERVER['REQUEST_METHOD'] == 'POST' &&
         (isset($_POST["cpf"]) &&
-            isset($_POST["password"])))
+        isset($_POST["password"])))
     )
     {
         // header('Location: logout');
@@ -52,9 +53,13 @@ try {
                 $_SESSION['representative_name']    = $row[1];
                 $_SESSION['representative_email']   = $row[2];
                 $_SESSION['representative_celular'] = $row[3];
-                $_SESSION['login']                  = session_id();
 
-                header('Location: ../view/index');
+                if (session_id())
+                {
+                    $_SESSION['login']  = session_id();
+
+                    header('Location: ../view/index');
+                }
             }
 
             // close statement
