@@ -1,5 +1,4 @@
 <?php
-
 include_once '../model/conexao.php';
 
 /**
@@ -31,10 +30,10 @@ try {
             /**
              * Afected database:
              * teif
-             * 
+             *
              * Afected table:
              * representante
-             * 
+             *
              * Afected columns:
              * cpf_representante
              * nome
@@ -44,7 +43,8 @@ try {
             $query = 'INSERT INTO representante (cpf_representante, nome, email, senha)
             VALUES (?, ?, ?, ?)';
 
-            if ($stmt = mysqli_prepare($conn, $query)) {
+            if ($stmt = mysqli_prepare($conn, $query))
+            {
                 // bind parameters for markers
                 mysqli_stmt_bind_param($stmt,
                     'ssss',
