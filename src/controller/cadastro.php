@@ -1,387 +1,395 @@
 <?php
+session_start();
 
 include_once '../model/conexao.php';
 
-/** 
- * Aqui se cria a maior SQL vista na historia da humanidade, testar só localmente!!
+/**
+ * Armazenamento de campos preenchidos em SESSION
  */
+if (!empty($_POST["team-name"]) && $_POST["team-name"] !== NULL) $_SESSION["team-name"]= $_POST["team-name"];
+if (!empty($_POST["team-acronym"])) $_SESSION["team-acronym"]= $_POST["team-acronym"];
+if (!empty($_POST["team-facebookLink"])) $_SESSION["team-facebookLink"]= $_POST["team-facebookLink"];
+if (!empty($_POST["college-name"])) $_SESSION["college-name"]= $_POST["college-name"];
+
+if (!empty($_POST["nameCS1"])) $_SESSION["nameCS1"] = $_POST["nameCS1"];
+if (!empty($_POST["steam-linkCS1"])) $_SESSION["steam-linkCS1"] = $_POST["steam-linkCS1"];
+if (!empty($_POST["CPFCS1"])) $_SESSION["CPFCS1"] = $_POST["CPFCS1"];
+if (!empty($_POST["raCS1"])) $_SESSION["raCS1"] = $_POST["raCS1"];
+if (!empty($_POST["proofCS1"])) $_SESSION["proofCS1"] = $_POST["proofCS1"];
+if (!empty($_POST["emailCS1"])) $_SESSION["emailCS1"] = $_POST["emailCS1"];
+
+if (!empty($_POST["nameCS2"])) $_SESSION["nameCS2"] = $_POST["nameCS2"];
+if (!empty($_POST["steam-linkCS2"])) $_SESSION["steam-linkCS2"] = $_POST["steam-linkCS2"];
+if (!empty($_POST["CPFCS2"])) $_SESSION["CPFCS2"] = $_POST["CPFCS2"];
+if (!empty($_POST["raCS2"])) $_SESSION["raCS2"] = $_POST["raCS2"];
+if (!empty($_POST["proofCS2"])) $_SESSION["proofCS2"] = $_POST["proofCS2"];
+if (!empty($_POST["emailCS2"])) $_SESSION["emailCS2"] = $_POST["emailCS2"];
+
+if (!empty($_POST["nameCS3"])) $_SESSION["nameCS3"] = $_POST["nameCS3"];
+if (!empty($_POST["steam-linkCS3"])) $_SESSION["steam-linkCS3"] = $_POST["steam-linkCS3"];
+if (!empty($_POST["CPFCS3"])) $_SESSION["CPFCS3"] = $_POST["CPFCS3"];
+if (!empty($_POST["raCS3"])) $_SESSION["raCS3"] = $_POST["raCS3"];
+if (!empty($_POST["proofCS3"])) $_SESSION["proofCS3"] = $_POST["proofCS3"];
+if (!empty($_POST["emailCS3"])) $_SESSION["emailCS3"] = $_POST["emailCS3"];
+
+if (!empty($_POST["nameCS4"])) $_SESSION["nameCS4"] = $_POST["nameCS4"];
+if (!empty($_POST["steam-linkCS4"])) $_SESSION["steam-linkCS4"] = $_POST["steam-linkCS4"];
+if (!empty($_POST["CPFCS4"])) $_SESSION["CPFCS4"] = $_POST["CPFCS4"];
+if (!empty($_POST["raCS4"])) $_SESSION["raCS4"] = $_POST["raCS4"];
+if (!empty($_POST["proofCS4"])) $_SESSION["proofCS4"] = $_POST["proofCS4"];
+if (!empty($_POST["emailCS4"])) $_SESSION["emailCS4"] = $_POST["emailCS4"];
+
+if (!empty($_POST["nameCS5"])) $_SESSION["nameCS5"] = $_POST["nameCS5"];
+if (!empty($_POST["steam-linkCS5"])) $_SESSION["steam-linkCS5"] = $_POST["steam-linkCS5"];
+if (!empty($_POST["CPFCS5"])) $_SESSION["CPFCS5"] = $_POST["CPFCS5"];
+if (!empty($_POST["raCS5"])) $_SESSION["raCS5"] = $_POST["raCS5"];
+if (!empty($_POST["proofCS5"])) $_SESSION["proofCS5"] = $_POST["proofCS5"];
+if (!empty($_POST["emailCS5"])) $_SESSION["emailCS5"] = $_POST["emailCS5"];
+
+if (!empty($_POST["nameLOL1"])) $_SESSION["nameLOL1"] = $_POST["nameLOL1"];
+if (!empty($_POST["summoner-nameLOL1"])) $_SESSION["summoner-nameLOL1"] = $_POST["summoner-nameLOL1"];
+if (!empty($_POST["cpfLOL1"])) $_SESSION["cpfLOL1"] = $_POST["cpfLOL1"];
+if (!empty($_POST["raLOL1"])) $_SESSION["raLOL1"] = $_POST["raLOL1"];
+if (!empty($_POST["proofLOL1"])) $_SESSION["proofLOL1"] = $_POST["proofLOL1"];
+if (!empty($_POST["emailLOL1"])) $_SESSION["emailLOL1"] = $_POST["emailLOL1"];
+
+if (!empty($_POST["nameLOL2"])) $_SESSION["nameLOL2"] = $_POST["nameLOL2"];
+if (!empty($_POST["summoner-nameLOL2"])) $_SESSION["summoner-nameLOL2"] = $_POST["summoner-nameLOL2"];
+if (!empty($_POST["cpfLOL2"])) $_SESSION["cpfLOL2"] = $_POST["cpfLOL2"];
+if (!empty($_POST["raLOL2"])) $_SESSION["raLOL2"] = $_POST["raLOL2"];
+if (!empty($_POST["proofLOL2"])) $_SESSION["proofLOL2"] = $_POST["proofLOL2"];
+if (!empty($_POST["emailLOL2"])) $_SESSION["emailLOL2"] = $_POST["emailLOL2"];
+
+if (!empty($_POST["nameLOL3"])) $_SESSION["nameLOL3"] = $_POST["nameLOL3"];
+if (!empty($_POST["summoner-nameLOL3"])) $_SESSION["summoner-nameLOL3"] = $_POST["summoner-nameLOL3"];
+if (!empty($_POST["cpfLOL3"])) $_SESSION["cpfLOL3"] = $_POST["cpfLOL3"];
+if (!empty($_POST["raLOL3"])) $_SESSION["raLOL3"] = $_POST["raLOL3"];
+if (!empty($_POST["proofLOL3"])) $_SESSION["proofLOL3"] = $_POST["proofLOL3"];
+if (!empty($_POST["emailLOL3"])) $_SESSION["emailLOL3"] = $_POST["emailLOL3"];
+
+if (!empty($_POST["nameLOL4"])) $_SESSION["nameLOL4"] = $_POST["nameLOL4"];
+if (!empty($_POST["summoner-nameLOL4"])) $_SESSION["summoner-nameLOL4"] = $_POST["summoner-nameLOL4"];
+if (!empty($_POST["cpfLOL4"])) $_SESSION["cpfLOL4"] = $_POST["cpfLOL4"];
+if (!empty($_POST["raLOL4"])) $_SESSION["raLOL4"] = $_POST["raLOL4"];
+if (!empty($_POST["proofLOL4"])) $_SESSION["proofLOL4"] = $_POST["proofLOL4"];
+if (!empty($_POST["emailLOL4"])) $_SESSION["emailLOL4"] = $_POST["emailLOL4"];
+
+if (!empty($_POST["nameLOL5"])) $_SESSION["nameLOL5"] = $_POST["nameLOL5"];
+if (!empty($_POST["summoner-nameLOL5"])) $_SESSION["summoner-nameLOL5"] = $_POST["summoner-nameLOL5"];
+if (!empty($_POST["cpfLOL5"])) $_SESSION["cpfLOL5"] = $_POST["cpfLOL5"];
+if (!empty($_POST["raLOL5"])) $_SESSION["raLOL5"] = $_POST["raLOL5"];
+if (!empty($_POST["proofLOL5"])) $_SESSION["proofLOL5"] = $_POST["proofLOL5"];
+if (!empty($_POST["emailLOL5"])) $_SESSION["emailLOL5"] = $_POST["emailLOL5"];
+
+if (!empty($_POST["nameFIFA1"])) $_SESSION["nameFIFA1"] = $_POST["nameFIFA1"];
+if (!empty($_POST["psnFIFA1"])) $_SESSION["psnFIFA1"] = $_POST["psnFIFA1"];
+if (!empty($_POST["cpfFIFA1"])) $_SESSION["cpfFIFA1"] = $_POST["cpfFIFA1"];
+if (!empty($_POST["raFIFA1"])) $_SESSION["raFIFA1"] = $_POST["raFIFA1"];
+if (!empty($_POST["proofFIFA1"])) $_SESSION["proofFIFA1"] = $_POST["proofFIFA1"];
+if (!empty($_POST["emailFIFA1"])) $_SESSION["emailFIFA1"] = $_POST["emailFIFA1"];
+
+if (!empty($_POST["nameFIFA2"])) $_SESSION["nameFIFA2"] = $_POST["nameFIFA2"];
+if (!empty($_POST["psnFIFA2"])) $_SESSION["psnFIFA2"] = $_POST["psnFIFA2"];
+if (!empty($_POST["cpfFIFA2"])) $_SESSION["cpfFIFA2"] = $_POST["cpfFIFA2"];
+if (!empty($_POST["raFIFA2"])) $_SESSION["raFIFA2"] = $_POST["raFIFA2"];
+if (!empty($_POST["proofFIFA2"])) $_SESSION["proofFIFA2"] = $_POST["proofFIFA2"];
+if (!empty($_POST["emailFIFA2"])) $_SESSION["emailFIFA2"] = $_POST["emailFIFA2"];
+
+if (!empty($_POST["nameFIFA3"])) $_SESSION["nameFIFA3"] = $_POST["nameFIFA3"];
+if (!empty($_POST["psnFIFA3"])) $_SESSION["psnFIFA3"] = $_POST["psnFIFA3"];
+if (!empty($_POST["cpfFIFA3"])) $_SESSION["cpfFIFA3"] = $_POST["cpfFIFA3"];
+if (!empty($_POST["raFIFA3"])) $_SESSION["raFIFA3"] = $_POST["raFIFA3"];
+if (!empty($_POST["proofFIFA3"])) $_SESSION["proofFIFA3"] = $_POST["proofFIFA3"];
+if (!empty($_POST["emailFIFA3"])) $_SESSION["emailFIFA3"] = $_POST["emailFIFA3"];
+
+if (!empty($_POST["nameHS1"])) $_SESSION["nameHS1"] = $_POST["nameHS1"];
+if (!empty($_POST["battle-netHS1"])) $_SESSION["battle-netHS1"] = $_POST["battle-netHS1"];
+if (!empty($_POST["cpfHS1"])) $_SESSION["cpfHS1"] = $_POST["cpfHS1"];
+if (!empty($_POST["raHS1"])) $_SESSION["raHS1"] = $_POST["raHS1"];
+if (!empty($_POST["proofHS1"])) $_SESSION["proofHS1"] = $_POST["proofHS1"];
+if (!empty($_POST["emailHS1"])) $_SESSION["emailHS1"] = $_POST["emailHS1"];
+
+if (!empty($_POST["nameHS2"])) $_SESSION["nameHS2"] = $_POST["nameHS2"];
+if (!empty($_POST["battle-netHS2"])) $_SESSION["battle-netHS2"] = $_POST["battle-netHS2"];
+if (!empty($_POST["cpfHS2"])) $_SESSION["cpfHS2"] = $_POST["cpfHS2"];
+if (!empty($_POST["raHS2"])) $_SESSION["raHS2"] = $_POST["raHS2"];
+if (!empty($_POST["proofHS2"])) $_SESSION["proofHS2"] = $_POST["proofHS2"];
+if (!empty($_POST["emailHS2"])) $_SESSION["emailHS2"] = $_POST["emailHS2"];
+
+if (!empty($_POST["nameHS3"])) $_SESSION["nameHS3"] = $_POST["nameHS3"];
+if (!empty($_POST["battle-netHS3"])) $_SESSION["battle-netHS3"] = $_POST["battle-netHS3"];
+if (!empty($_POST["cpfHS3"])) $_SESSION["cpfHS3"] = $_POST["cpfHS3"];
+if (!empty($_POST["raHS3"])) $_SESSION["raHS3"] = $_POST["raHS3"];
+if (!empty($_POST["proofHS3"])) $_SESSION["proofHS3"] = $_POST["proofHS3"];
+if (!empty($_POST["emailHS3"])) $_SESSION["emailHS3"] = $_POST["emailHS3"];
+
+if (!empty($_POST["nameCLASH1"])) $_SESSION["nameCLASH1"] = $_POST["nameCLASH1"];
+if (!empty($_POST["nickCLASH1"])) $_SESSION["nickCLASH1"] = $_POST["nickCLASH1"];
+if (!empty($_POST["cpfCLASH1"])) $_SESSION["cpfCLASH1"] = $_POST["cpfCLASH1"];
+if (!empty($_POST["raCLASH1"])) $_SESSION["raCLASH1"] = $_POST["raCLASH1"];
+if (!empty($_POST["proofCLASH1"])) $_SESSION["proofCLASH1"] = $_POST["proofCLASH1"];
+if (!empty($_POST["emailCLASH1"])) $_SESSION["emailCLASH1"] = $_POST["emailCLASH1"];
+
+if (!empty($_POST["nameCLASH2"])) $_SESSION["nameCLASH2"] = $_POST["nameCLASH2"];
+if (!empty($_POST["nickCLASH2"])) $_SESSION["nickCLASH2"] = $_POST["nickCLASH2"];
+if (!empty($_POST["cpfCLASH2"])) $_SESSION["cpfCLASH2"] = $_POST["cpfCLASH2"];
+if (!empty($_POST["raCLASH2"])) $_SESSION["raCLASH2"] = $_POST["raCLASH2"];
+if (!empty($_POST["proofCLASH2"])) $_SESSION["proofCLASH2"] = $_POST["proofCLASH2"];
+if (!empty($_POST["emailCLASH2"])) $_SESSION["emailCLASH2"] = $_POST["emailCLASH2"];
+
+if (!empty($_POST["nameCLASH3"])) $_SESSION["nameCLASH3"] = $_POST["nameCLASH3"];
+if (!empty($_POST["nickCLASH3"])) $_SESSION["nickCLASH3"] = $_POST["nickCLASH3"];
+if (!empty($_POST["cpfCLASH3"])) $_SESSION["cpfCLASH3"] = $_POST["cpfCLASH3"];
+if (!empty($_POST["raCLASH3"])) $_SESSION["raCLASH3"] = $_POST["raCLASH3"];
+if (!empty($_POST["proofCLASH3"])) $_SESSION["proofCLASH3"] = $_POST["proofCLASH3"];
+if (!empty($_POST["emailCLASH3"])) $_SESSION["emailCLASH3"] = $_POST["emailCLASH3"];
 
 /**
- * Cadastrando Equipe
- * Deve-se cadastrar a equipe primeiro para pega o id_equipe do BD, e salvar na tabela de modalidades como a FK
+ * Queries a serem executadas
  */
+$query_equipe = [];
+$queries_jogadores = [];
 
 /**
- * Cadastro equipe
+ * Montagem da query de cadastro da equipe
  */
 if (
-  $_SERVER['REQUEST_METHOD'] == 'POST' &&
-  isset($_POST["team-name"]) &&
-  isset($_POST["team-acronym"]) &&
-  isset($_POST["team-facebookLink"]) &&
-  isset($_POST["college-name"]) &&
-  isset($_POST["team-representative-name"]) &&
-  isset($_POST["team-representative-cellPhone"]) &&
-  isset($_POST["team-representative-email"])
+  !empty($_POST["team-name"]) &&
+  !empty($_POST["team-acronym"]) &&
+  !empty($_POST["team-facebookLink"]) &&
+  !empty($_POST["college-name"]) &&
+  !empty($_SESSION['representative_cpf'])
 ) {
 
-  $team_name = $_POST['team-name'];
-  $team_acronym = $_POST['team-acronym'];
-  $team_facebookLink = $_POST['team-facebookLink'];
-  $college_name = $_POST['college-name'];
+  $query_equipe = [
+    "INSERT INTO equipe (nome_equipe, sigla, faculdade, facebook, fk_cpf_representante) VALUES (?, ?, ?, ?, ?)",
+    "sssss",
+    [$_POST["team-name"], $_POST["team-acronym"], $_POST["college-name"], $_POST["team-facebookLink"], $_SESSION['representative_cpf']]];
+    
+} else {
+  header("Location: ../view/sign-up.php?abaErro=nav-team-tab");
+}
 
-  //o ideal que representante ja esteja cadastrado no BD
-  $team_representative_name = $_POST['team-representative-name'];
-  $team_representative_cellPhone = $_POST['team-representative-cellPhone'];
-  $team_representative_email = $_POST['team-representative-email'];
+/**
+ * Query de cadastro CS
+ */
+if (
+  !empty($_POST["CPFCS1"]) && !empty($_POST["CPFCS2"]) && !empty($_POST["CPFCS3"]) && !empty($_POST["CPFCS4"]) && !empty($_POST["CPFCS5"]) &&
+  !empty($_POST["nameCS1"]) && !empty($_POST["nameCS2"]) && !empty($_POST["nameCS3"]) && !empty($_POST["nameCS4"]) && !empty($_POST["nameCS5"]) &&
+  !empty($_POST["emailCS1"]) && !empty($_POST["emailCS2"]) && !empty($_POST["emailCS3"]) && !empty($_POST["emailCS4"]) && !empty($_POST["emailCS5"]) &&
+  !empty($_POST["proofCS1"]) && !empty($_POST["proofCS2"]) && !empty($_POST["proofCS3"]) && !empty($_POST["proofCS4"]) && !empty($_POST["proofCS5"]) &&
+  !empty($_POST["steam-linkCS1"]) && !empty($_POST["steam-linkCS2"]) && !empty($_POST["steam-linkCS3"]) && !empty($_POST["steam-linkCS4"]) && !empty($_POST["steam-linkCS5"]) &&
+  !empty($_POST["raCS1"]) && !empty($_POST["raCS2"]) && !empty($_POST["raCS3"]) && !empty($_POST["raCS4"]) && !empty($_POST["raCS5"])
+) {
+
+  array_push($queries_jogadores, [
+    "insert into JOGADOR_CSGO
+      (cpf_csgo, nome_csgo, email_csgo, comprovante_matricula_csgo, steam_link, ra_csgo, id_equipe)
+      values (?, ?, ?, ?, ?, ?, ?)",
+    "ssssssi",
+    [
+      [$_POST["CPFCS1"], $_POST["nameCS1"], $_POST["emailCS1"], $_POST["proofCS1"], $_SESSION['steam-linkCS1'], $_SESSION['raCS1']],
+      [$_POST["CPFCS2"], $_POST["nameCS2"], $_POST["emailCS2"], $_POST["proofCS2"], $_SESSION['steam-linkCS2'], $_SESSION['raCS2']],
+      [$_POST["CPFCS3"], $_POST["nameCS3"], $_POST["emailCS3"], $_POST["proofCS3"], $_SESSION['steam-linkCS3'], $_SESSION['raCS3']],
+      [$_POST["CPFCS4"], $_POST["nameCS4"], $_POST["emailCS4"], $_POST["proofCS4"], $_SESSION['steam-linkCS4'], $_SESSION['raCS4']],
+      [$_POST["CPFCS5"], $_POST["nameCS5"], $_POST["emailCS5"], $_POST["proofCS5"], $_SESSION['steam-linkCS5'], $_SESSION['raCS5']]
+    ]
+  ]);
+  echo "passou";
+
+} else if (
+  !empty($_POST["CPFCS1"]) || !empty($_POST["CPFCS2"]) || !empty($_POST["CPFCS3"]) || !empty($_POST["CPFCS4"]) || !empty($_POST["CPFCS5"]) ||
+  !empty($_POST["nameCS1"]) || !empty($_POST["nameCS2"]) || !empty($_POST["nameCS3"]) || !empty($_POST["nameCS4"]) || !empty($_POST["nameCS5"]) ||
+  !empty($_POST["emailCS1"]) || !empty($_POST["emailCS2"]) || !empty($_POST["emailCS3"]) || !empty($_POST["emailCS4"]) || !empty($_POST["emailCS5"]) ||
+  !empty($_POST["proofCS1"]) || !empty($_POST["proofCS2"]) || !empty($_POST["proofCS3"]) || !empty($_POST["proofCS4"]) || !empty($_POST["proofCS5"]) ||
+  !empty($_POST["steam-linkCS1"]) || !empty($_POST["steam-linkCS2"]) || !empty($_POST["steam-linkCS3"]) || !empty($_POST["steam-linkCS4"]) || !empty($_POST["steam-linkCS5"]) ||
+  !empty($_POST["raCS1"]) || !empty($_POST["raCS2"]) || !empty($_POST["raCS3"]) || !empty($_POST["raCS4"]) || !empty($_POST["raCS5"])
+) {
+  header("Location: ../view/sign-up.php?abaErro=nav-cs-tab");
 }
 
 
 /**
- * Cadastro CS
+ * Query de cadastro LOL
+ */
+if (
+  !empty($_POST["nameLOL1"]) && !empty($_POST["nameLOL2"]) && !empty($_POST["nameLOL3"]) && !empty($_POST["nameLOL4"]) && !empty($_POST["nameLOL5"]) &&
+  !empty($_POST["summoner-nameLOL1"]) && !empty($_POST["summoner-nameLOL2"]) && !empty($_POST["summoner-nameLOL3"]) && !empty($_POST["summoner-nameLOL4"]) && !empty($_POST["summoner-nameLOL5"]) &&
+  !empty($_POST["cpfLOL1"]) && !empty($_POST["cpfLOL2"]) && !empty($_POST["cpfLOL3"]) && !empty($_POST["cpfLOL4"]) && !empty($_POST["cpfLOL5"]) &&
+  !empty($_POST["raLOL1"]) && !empty($_POST["raLOL2"]) && !empty($_POST["raLOL3"]) && !empty($_POST["raLOL4"]) && !empty($_POST["raLOL5"]) &&
+  !empty($_POST["proofLOL1"]) && !empty($_POST["proofLOL2"]) && !empty($_POST["proofLOL3"]) && !empty($_POST["proofLOL4"]) && !empty($_POST["proofLOL5"]) &&
+  !empty($_POST["emailLOL1"]) && !empty($_POST["emailLOL2"]) && !empty($_POST["emailLOL3"]) && !empty($_POST["emailLOL4"]) && !empty($_POST["emailLOL5"])
+) {
+
+  array_push($queries_jogadores, [
+    "insert into JOGADOR_LOL
+      (cpf_lol, nome_lol, email_lol, comprovante_matricula_lol, nome_invocador, ra_lol, id_equipe)
+      values (?, ?, ?, ?, ?, ?, ?)",
+    "ssssssi",
+    [
+      [$_POST["cpfLOL1"], $_POST["nameLOL1"], $_POST["emailLOL1"], $_POST["proofLOL1"], $_SESSION['summoner-nameLOL1'], $_SESSION['raLOL1']],
+      [$_POST["cpfLOL2"], $_POST["nameLOL2"], $_POST["emailLOL2"], $_POST["proofLOL2"], $_SESSION['summoner-nameLOL2'], $_SESSION['raLOL2']],
+      [$_POST["cpfLOL3"], $_POST["nameLOL3"], $_POST["emailLOL3"], $_POST["proofLOL3"], $_SESSION['summoner-nameLOL3'], $_SESSION['raLOL3']],
+      [$_POST["cpfLOL4"], $_POST["nameLOL4"], $_POST["emailLOL4"], $_POST["proofLOL4"], $_SESSION['summoner-nameLOL4'], $_SESSION['raLOL4']],
+      [$_POST["cpfLOL5"], $_POST["nameLOL5"], $_POST["emailLOL5"], $_POST["proofLOL5"], $_SESSION['summoner-nameLOL5'], $_SESSION['raLOL5']]
+    ]
+  ]);
+
+} else if (
+  !empty($_POST["nameLOL1"]) || !empty($_POST["nameLOL2"]) || !empty($_POST["nameLOL3"]) || !empty($_POST["nameLOL4"]) || !empty($_POST["nameLOL5"]) ||
+  !empty($_POST["summoner-nameLOL1"]) || !empty($_POST["summoner-nameLOL2"]) || !empty($_POST["summoner-nameLOL3"]) || !empty($_POST["summoner-nameLOL4"]) || !empty($_POST["summoner-nameLOL5"]) ||
+  !empty($_POST["cpfLOL1"]) || !empty($_POST["cpfLOL2"]) || !empty($_POST["cpfLOL3"]) || !empty($_POST["cpfLOL4"]) || !empty($_POST["cpfLOL5"]) ||
+  !empty($_POST["raLOL1"]) || !empty($_POST["raLOL2"]) || !empty($_POST["raLOL3"]) || !empty($_POST["raLOL4"]) || !empty($_POST["raLOL5"]) ||
+  !empty($_POST["proofLOL1"]) || !empty($_POST["proofLOL2"]) || !empty($_POST["proofLOL3"]) || !empty($_POST["proofLOL4"]) || !empty($_POST["proofLOL5"]) ||
+  !empty($_POST["emailLOL1"]) || !empty($_POST["emailLOL2"]) || !empty($_POST["emailLOL3"]) || !empty($_POST["emailLOL4"]) || !empty($_POST["emailLOL5"])
+) {
+  header("Location: ../view/sign-up.php?abaErro=nav-lol-tab");
+}
+
+/**
+ * Query de cadastro FIFA
+ */
+if (
+  !empty($_POST["nameFIFA1"]) && !empty($_POST["nameFIFA2"]) && !empty($_POST["nameFIFA3"]) &&
+  !empty($_POST["psnFIFA1"]) && !empty($_POST["psnFIFA2"]) && !empty($_POST["psnFIFA3"]) &&
+  !empty($_POST["cpfFIFA1"]) && !empty($_POST["cpfFIFA2"]) && !empty($_POST["cpfFIFA3"]) &&
+  !empty($_POST["raFIFA1"]) && !empty($_POST["raFIFA2"]) && !empty($_POST["raFIFA3"]) &&
+  !empty($_POST["proofFIFA1"]) && !empty($_POST["proofFIFA2"]) && !empty($_POST["proofFIFA3"]) &&
+  !empty($_POST["emailFIFA1"]) && !empty($_POST["emailFIFA2"]) && !empty($_POST["emailFIFA3"])
+) {
+
+  array_push($queries_jogadores, [
+    "insert into JOGADOR_FIFA
+      (cpf_fifa, nome_fifa, email_fifa, comprovante_matricula_fifa, psn, ra_fifa, id_equipe)
+      values (?, ?, ?, ?, ?, ?, ?)",
+    "ssssssi",
+    [
+      [$_POST["cpfFIFA1"], $_POST["nameFIFA1"], $_POST["emailFIFA1"], $_POST["proofFIFA1"], $_SESSION['psnFIFA1'], $_SESSION['raFIFA1']],
+      [$_POST["cpfFIFA2"], $_POST["nameFIFA2"], $_POST["emailFIFA2"], $_POST["proofFIFA2"], $_SESSION['psnFIFA2'], $_SESSION['raFIFA2']],
+      [$_POST["cpfFIFA3"], $_POST["nameFIFA3"], $_POST["emailFIFA3"], $_POST["proofFIFA3"], $_SESSION['psnFIFA3'], $_SESSION['raFIFA3']]
+    ]
+  ]);
+
+} else if (
+  !empty($_POST["nameFIFA1"]) || !empty($_POST["nameFIFA2"]) || !empty($_POST["nameFIFA3"]) ||
+  !empty($_POST["psnFIFA1"]) || !empty($_POST["psnFIFA2"]) || !empty($_POST["psnFIFA3"]) ||
+  !empty($_POST["cpfFIFA1"]) || !empty($_POST["cpfFIFA2"]) || !empty($_POST["cpfFIFA3"]) ||
+  !empty($_POST["raFIFA1"]) || !empty($_POST["raFIFA2"]) || !empty($_POST["raFIFA3"]) ||
+  !empty($_POST["proofFIFA1"]) || !empty($_POST["proofFIFA2"]) || !empty($_POST["proofFIFA3"]) ||
+  !empty($_POST["emailFIFA1"]) || !empty($_POST["emailFIFA2"]) || !empty($_POST["emailFIFA3"])
+) {
+  header("Location: ../view/sign-up.php?abaErro=nav-fifa-tab");
+}
+
+/**
+ * Query de cadastro HS
+ */
+if (
+  !empty($_POST["nameHS1"]) && !empty($_POST["nameHS2"]) && !empty($_POST["nameHS3"]) &&
+  !empty($_POST["battle-netHS1"]) && !empty($_POST["battle-netHS2"]) && !empty($_POST["battle-netHS3"]) &&
+  !empty($_POST["cpfHS1"]) && !empty($_POST["cpfHS2"]) && !empty($_POST["cpfHS3"]) &&
+  !empty($_POST["raHS1"]) && !empty($_POST["raHS2"]) && !empty($_POST["raHS3"]) &&
+  !empty($_POST["proofHS1"]) && !empty($_POST["proofHS2"]) && !empty($_POST["proofHS3"]) &&
+  !empty($_POST["emailHS1"]) && !empty($_POST["emailHS2"]) && !empty($_POST["emailHS3"])
+) {
+
+  array_push($queries_jogadores, [
+    "insert into JOGADOR_HS
+      (cpf_hs, nome_hs, email_hs, comprovante_matricula_hs, battle_net, ra_hs, id_equipe)
+      values (?, ?, ?, ?, ?, ?, ?)",
+    "ssssssi",
+    [
+      [$_POST["cpfHS1"], $_POST["nameHS1"], $_POST["emailHS1"], $_POST["proofHS1"], $_SESSION['battle-netHS1'], $_SESSION['raHS1']],
+      [$_POST["cpfHS2"], $_POST["nameHS2"], $_POST["emailHS2"], $_POST["proofHS2"], $_SESSION['battle-netHS2'], $_SESSION['raHS2']],
+      [$_POST["cpfHS3"], $_POST["nameHS3"], $_POST["emailHS3"], $_POST["proofHS3"], $_SESSION['battle-netHS3'], $_SESSION['raHS3']]
+    ]
+  ]);
+
+} else if (
+  !empty($_POST["nameHS1"]) || !empty($_POST["nameHS2"]) || !empty($_POST["nameHS3"]) ||
+  !empty($_POST["battle-netHS1"]) || !empty($_POST["battle-netHS2"]) || !empty($_POST["battle-netHS3"]) ||
+  !empty($_POST["cpfHS1"]) || !empty($_POST["cpfHS2"]) || !empty($_POST["cpfHS3"]) ||
+  !empty($_POST["raHS1"]) || !empty($_POST["raHS2"]) || !empty($_POST["raHS3"]) ||
+  !empty($_POST["proofHS1"]) || !empty($_POST["proofHS2"]) || !empty($_POST["proofHS3"]) ||
+  !empty($_POST["emailHS1"]) || !empty($_POST["emailHS2"]) || !empty($_POST["emailHS3"])
+) {
+  header("Location: ../view/sign-up.php?abaErro=nav-hs-tab");
+}
+
+/**
+ * Query de cadastro clash
  */
 
 if (
-  $_SERVER['REQUEST_METHOD'] == 'POST' &&
-  isset($_POST["CPFCS1"]) &&
-  isset($_POST["CPFCS2"]) &&
-  isset($_POST["CPFCS3"]) &&
-  isset($_POST["CPFCS4"]) &&
-  isset($_POST["CPFCS5"]) &&
-  isset($_POST["nameCS1"]) &&
-  isset($_POST["nameCS2"]) &&
-  isset($_POST["nameCS3"]) &&
-  isset($_POST["nameCS4"]) &&
-  isset($_POST["nameCS5"]) &&
-  isset($_POST["emailCS1"]) &&
-  isset($_POST["emailCS2"]) &&
-  isset($_POST["emailCS3"]) &&
-  isset($_POST["emailCS4"]) &&
-  isset($_POST["emailCS5"]) &&
-  isset($_POST["proofCS1"]) &&
-  isset($_POST["proofCS2"]) &&
-  isset($_POST["proofCS3"]) &&
-  isset($_POST["proofCS4"]) &&
-  isset($_POST["proofCS5"]) &&
-  isset($_POST["steam-linkCS1"]) &&
-  isset($_POST["steam-linkCS2"]) &&
-  isset($_POST["steam-linkCS3"]) &&
-  isset($_POST["steam-linkCS4"]) &&
-  isset($_POST["steam-linkCS5"]) &&
-  isset($_POST["raCS1"]) &&
-  isset($_POST["raCS2"]) &&
-  isset($_POST["raCS3"]) &&
-  isset($_POST["raCS4"]) &&
-  isset($_POST["raCS5"])
+  !empty($_POST["nameCLASH1"]) && !empty($_POST["nameCLASH2"]) && !empty($_POST["nameCLASH3"]) &&
+  !empty($_POST["nickCLASH1"]) && !empty($_POST["nickCLASH2"]) && !empty($_POST["nickCLASH3"]) &&
+  !empty($_POST["cpfCLASH1"]) && !empty($_POST["cpfCLASH2"]) && !empty($_POST["cpfCLASH3"]) &&
+  !empty($_POST["raCLASH1"]) && !empty($_POST["raCLASH2"]) && !empty($_POST["raCLASH3"]) &&
+  !empty($_POST["proofCLASH1"]) && !empty($_POST["proofCLASH2"]) && !empty($_POST["proofCLASH3"]) &&
+  !empty($_POST["emailCLASH1"]) && !empty($_POST["emailCLASH2"]) && !empty($_POST["emailCLASH3"])
 ) {
 
-  $cpf_csgo1 = $_POST['CPFCS1'];
-  $cpf_csgo2 = $_POST['CPFCS2'];
-  $cpf_csgo3 = $_POST['CPFCS3'];
-  $cpf_csgo4 = $_POST['CPFCS4'];
-  $cpf_csgo5 = $_POST['CPFCS5'];
+  array_push($queries_jogadores, [
+    "insert into JOGADOR_CLASH
+      (cpf_clash, nome_clash, email_clash, comprovante_matricula, nick, ra_clash, id_equipe)
+      values (?, ?, ?, ?, ?, ?, ?)",
+    "ssssssi",
+    [
+      [$_POST["cpfCLASH1"], $_POST["nameCLASH1"], $_POST["emailCLASH1"], $_POST["proofCLASH1"], $_SESSION['nickCLASH1'], $_SESSION['raCLASH1']],
+      [$_POST["cpfCLASH2"], $_POST["nameCLASH2"], $_POST["emailCLASH2"], $_POST["proofCLASH2"], $_SESSION['nickCLASH2'], $_SESSION['raCLASH2']],
+      [$_POST["cpfCLASH3"], $_POST["nameCLASH3"], $_POST["emailCLASH3"], $_POST["proofCLASH3"], $_SESSION['nickCLASH3'], $_SESSION['raCLASH3']]
+    ]
+  ]);
+} else if (
+  !empty($_POST["nameCLASH1"]) || !empty($_POST["nameCLASH2"]) || !empty($_POST["nameCLASH3"]) ||
+  !empty($_POST["nickCLASH1"]) || !empty($_POST["nickCLASH2"]) || !empty($_POST["nickCLASH3"]) ||
+  !empty($_POST["cpfCLASH1"]) || !empty($_POST["cpfCLASH2"]) || !empty($_POST["cpfCLASH3"]) ||
+  !empty($_POST["raCLASH1"]) || !empty($_POST["raCLASH2"]) || !empty($_POST["raCLASH3"]) ||
+  !empty($_POST["proofCLASH1"]) || !empty($_POST["proofCLASH2"]) || !empty($_POST["proofCLASH3"]) ||
+  !empty($_POST["emailCLASH1"]) || !empty($_POST["emailCLASH2"]) || !empty($_POST["emailCLASH3"])
+) {
+  header("Location: ../view/sign-up.php?abaErro=nav-clash-tab");
+}
 
-  $nome_csgo1 = $_POST['nameCS1'];
-  $nome_csgo2 = $_POST['nameCS2'];
-  $nome_csgo3 = $_POST['nameCS3'];
-  $nome_csgo4 = $_POST['nameCS4'];
-  $nome_csgo5 = $_POST['nameCS5'];
+/**
+ * Inserção da equipe
+ */
 
-  $email_csgo = $_POST['emailCS1'];
-  $email_csgo = $_POST['emailCS2'];
-  $email_csgo = $_POST['emailCS3'];
-  $email_csgo = $_POST['emailCS4'];
-  $email_csgo = $_POST['emailCS5'];
+try {
+  if ($stmt = mysqli_prepare($conn, $query_equipe[0])) {
 
-  $comprovante_matricula_csgo = $_POST['proofCS1'];
-  $comprovante_matricula_csgo = $_POST['proofCS2'];
-  $comprovante_matricula_csgo = $_POST['proofCS3'];
-  $comprovante_matricula_csgo = $_POST['proofCS4'];
-  $comprovante_matricula_csgo = $_POST['proofCS5'];
+    // bind parameters for markers
+    mysqli_stmt_bind_param($stmt, $query_equipe[1], $query_equipe[2][0], $query_equipe[2][1], $query_equipe[2][2], $query_equipe[2][3], $query_equipe[2][4]);
 
-  $steam_link = $_POST['steam-linkCS1'];
-  $steam_link = $_POST['steam-linkCS2'];
-  $steam_link = $_POST['steam-linkCS3'];
-  $steam_link = $_POST['steam-linkCS4'];
-  $steam_link = $_POST['steam-linkCS5'];
-
-  $ra_csgo = $_POST['raCS1'];
-  $ra_csgo = $_POST['raCS2'];
-  $ra_csgo = $_POST['raCS3'];
-  $ra_csgo = $_POST['raCS4'];
-  $ra_csgo = $_POST['raCS5'];
-
-  $sql = "insert into jogador_csgo
-            (cpf_csgo, nome_csgo, email_csgo, comprovante_matricula_csgo, steam_link, id_equipe, ra_csgo)
-          values  (?,?,?,?,?,?,?)";
-  $id_equipe = 1;
-  if ($stmt = mysqli_prepare($conn, $sql)) {
-
-    /* bind parameters for markers */
-    mysqli_stmt_bind_param(
-      $stmt, 
-      "sssssis", 
-      $_POST["CPFCS1"], 
-      $_POST["nameCS1"], 
-      $_POST["emailCS1"], 
-      $_POST["proofCS1"], 
-      $_POST["steam-linkCS1"], 
-      $id_equipe, 
-      $_POST["raCS1"]
-    );
-
-    /* execute query */
+    // execute query
     mysqli_stmt_execute($stmt);
 
-    /* close statement */
+    // close statement
     mysqli_stmt_close($stmt);
-    //header("Location: ../view/index.php");
+
+    $id_equipe = mysqli_insert_id($conn);
+    echo $id_equipe;
   }
 
-}
+  foreach ($queries_jogadores as $query) {
+    foreach ($query[2] as $valores) {
+      if ($stmt = mysqli_prepare($conn, $query[0])) {
 
-
-/**
- * Cadastro LOL
- */
-if (
-  $_SERVER['REQUEST_METHOD'] == 'POST' &&
-  isset($_POST["nameLOL1"]) &&
-  isset($_POST["nameLOL2"]) &&
-  isset($_POST["nameLOL3"]) &&
-  isset($_POST["nameLOL4"]) &&
-  isset($_POST["nameLOL5"]) &&
-  isset($_POST["summoner-nameLOL1"]) &&
-  isset($_POST["summoner-nameLOL2"]) &&
-  isset($_POST["summoner-nameLOL3"]) &&
-  isset($_POST["summoner-nameLOL4"]) &&
-  isset($_POST["summoner-nameLOL5"]) &&
-  isset($_POST["cpfLOL1"]) &&
-  isset($_POST["cpfLOL2"]) &&
-  isset($_POST["cpfLOL3"]) &&
-  isset($_POST["cpfLOL4"]) &&
-  isset($_POST["cpfLOL5"]) &&
-  isset($_POST["raLOL1"]) &&
-  isset($_POST["raLOL2"]) &&
-  isset($_POST["raLOL3"]) &&
-  isset($_POST["raLOL4"]) &&
-  isset($_POST["raLOL5"]) &&
-  isset($_POST["proofLOL1"]) &&
-  isset($_POST["proofLOL2"]) &&
-  isset($_POST["proofLOL3"]) &&
-  isset($_POST["proofLOL4"]) &&
-  isset($_POST["proofLOL5"]) &&
-  isset($_POST["emailLOL1"]) &&
-  isset($_POST["emailLOL2"]) &&
-  isset($_POST["emailLOL3"]) &&
-  isset($_POST["emailLOL4"]) &&
-  isset($_POST["emailLOL5"])
-) {
-
-  $nameLOL1 = $_POST['nameLOL1'];
-  $nameLOL2 = $_POST['nameLOL2'];
-  $nameLOL3 = $_POST['nameLOL3'];
-  $nameLOL4 = $_POST['nameLOL4'];
-  $nameLOL5 = $_POST['nameLOL5'];
-
-  $summoner_nameLOL1 = $_POST['summoner-nameLOL1'];
-  $summoner_nameLOL2 = $_POST['summoner-nameLOL2'];
-  $summoner_nameLOL3 = $_POST['summoner-nameLOL3'];
-  $summoner_nameLOL4 = $_POST['summoner-nameLOL4'];
-  $summoner_nameLOL5 = $_POST['summoner-nameLOL5'];
-
-  $cpfLOL1 = $_POST['cpfLOL1'];
-  $cpfLOL2 = $_POST['cpfLOL2'];
-  $cpfLOL3 = $_POST['cpfLOL3'];
-  $cpfLOL4 = $_POST['cpfLOL4'];
-  $cpfLOL5 = $_POST['cpfLOL5'];
-
-  $raLOL1 = $_POST['raLOL1'];
-  $raLOL2 = $_POST['raLOL2'];
-  $raLOL3 = $_POST['raLOL3'];
-  $raLOL4 = $_POST['raLOL4'];
-  $raLOL5 = $_POST['raLOL5'];
-
-  $proofLOL1 = $_POST['proofLOL1'];
-  $proofLOL2 = $_POST['proofLOL2'];
-  $proofLOL3 = $_POST['proofLOL3'];
-  $proofLOL4 = $_POST['proofLOL4'];
-  $proofLOL5 = $_POST['proofLOL5'];
-
-  $emailLOL1 = $_POST['emailLOL1'];
-  $emailLOL2 = $_POST['emailLOL2'];
-  $emailLOL3 = $_POST['emailLOL3'];
-  $emailLOL4 = $_POST['emailLOL4'];
-  $emailLOL5 = $_POST['emailLOL5'];
-}
-/**
- * Cadastro FIFA
- */
-
-if (
-  $_SERVER['REQUEST_METHOD'] == 'POST' &&
-  isset($_POST["nameFIFA1"]) &&
-  isset($_POST["nameFIFA2"]) &&
-  isset($_POST["nameFIFA3"]) &&
-  isset($_POST["psnFIFA1"]) &&
-  isset($_POST["psnFIFA2"]) &&
-  isset($_POST["psnFIFA3"]) &&
-  isset($_POST["cpfFIFA1"]) &&
-  isset($_POST["cpfFIFA2"]) &&
-  isset($_POST["cpfFIFA3"]) &&
-  isset($_POST["raFIFA1"]) &&
-  isset($_POST["raFIFA2"]) &&
-  isset($_POST["raFIFA3"]) &&
-  isset($_POST["proofFIFA1"]) &&
-  isset($_POST["proofFIFA2"]) &&
-  isset($_POST["proofFIFA3"]) &&
-  isset($_POST["emailFIFA1"]) &&
-  isset($_POST["emailFIFA2"]) &&
-  isset($_POST["emailFIFA3"])
-) {
-
-
-  $nameFIFA1 = $_POST['nameFIFA1'];
-  $nameFIFA2 = $_POST['nameFIFA2'];
-  $nameFIFA3 = $_POST['nameFIFA3'];
- 
-  $psnFIFA1 = $_POST['psnFIFA1'];
-  $psnFIFA2 = $_POST['psnFIFA2'];
-  $psnFIFA3 = $_POST['psnFIFA3'];
-
-  $cpfFIFA1 = $_POST['cpfFIFA1'];
-  $cpfFIFA2 = $_POST['cpfFIFA2'];
-  $cpfFIFA3 = $_POST['cpfFIFA3'];
-  
-  $raFIFA1 = $_POST['raFIFA1'];
-  $raFIFA2 = $_POST['raFIFA2'];
-  $raFIFA3 = $_POST['raFIFA3'];
-
-  $proofFIFA1 = $_POST['proofFIFA1'];
-  $proofFIFA2 = $_POST['proofFIFA2'];
-  $proofFIFA3 = $_POST['proofFIFA3'];
-
-  $emailFIFA1 = $_POST['emailFIFA1'];
-  $emailFIFA2 = $_POST['emailFIFA2'];
-  $emailFIFA3 = $_POST['emailFIFA3'];
-}
-  /**
-   * Cadastro HS
-   */
-
-  if (
-    $_SERVER['REQUEST_METHOD'] == 'POST' &&
-    isset($_POST["nameHS1"]) &&
-    isset($_POST["nameHS2"]) &&
-    isset($_POST["nameHS3"]) &&
-    isset($_POST["battle-netHS1"]) &&
-    isset($_POST["battle-netHS2"]) &&
-    isset($_POST["battle-netHS3"]) &&
-    isset($_POST["cpfHS1"]) &&
-    isset($_POST["cpfHS2"]) &&
-    isset($_POST["cpfHS3"]) &&
-    isset($_POST["raHS1"]) &&
-    isset($_POST["raHS2"]) &&
-    isset($_POST["raHS3"]) &&
-    isset($_POST["proofHS1"]) &&
-    isset($_POST["proofHS2"]) &&
-    isset($_POST["proofHS3"]) &&
-    isset($_POST["emailHS1"]) &&
-    isset($_POST["emailHS2"]) &&
-    isset($_POST["emailHS3"])
-  ) {
-
-    $nameHS1 = $_POST['nameHS1'];
-    $nameHS2 = $_POST['nameHS2'];
-    $nameHS3 = $_POST['nameHS3'];
-
-    $battle_netHS1 = $_POST['battle-netHS1'];
-    $battle_netHS2 = $_POST['battle-netHS2'];
-    $battle_netHS3 = $_POST['battle-netHS3'];
-
-    $cpfHS1 = $_POST['cpfHS1'];
-    $cpfHS2 = $_POST['cpfHS2'];
-    $cpfHS3 = $_POST['cpfHS3'];
-
-    $raHS1 = $_POST['raHS1'];
-    $raHS2 = $_POST['raHS2'];
-    $raHS3 = $_POST['raHS3'];
-
-    $proofHS1 = $_POST['proofHS1'];
-    $proofHS2 = $_POST['proofHS2'];
-    $proofHS3 = $_POST['proofHS3'];
-
-    $emailHS1 = $_POST['emailHS1'];
-    $emailHS2 = $_POST['emailHS2'];
-    $emailHS3 = $_POST['emailHS3'];
+        // bind parameters for markers
+        mysqli_stmt_bind_param($stmt, $query[1], $valores[0], $valores[1], $valores[2], $valores[3], $valores[4], $valores[5], $id_equipe);
+    
+        // execute query
+        mysqli_stmt_execute($stmt);
+    
+        // close statement
+        mysqli_stmt_close($stmt);
+      }
+    }
   }
-  /**
-   * Cadastro clash
-   */
-
-  if (
-    $_SERVER['REQUEST_METHOD'] == 'POST' &&
-    isset($_POST["nameCLASH1"]) &&
-    isset($_POST["nameCLASH2"]) &&
-    isset($_POST["nameCLASH3"]) &&
-    isset($_POST["nickCLASH1"]) &&
-    isset($_POST["nickCLASH2"]) &&
-    isset($_POST["nickCLASH3"]) &&
-    isset($_POST["cpfCLASH1"]) &&
-    isset($_POST["cpfCLASH2"]) &&
-    isset($_POST["cpfCLASH3"]) &&
-    isset($_POST["raCLASH1"]) &&
-    isset($_POST["raCLASH2"]) &&
-    isset($_POST["raCLASH3"]) &&
-    isset($_POST["proofCLASH1"]) &&
-    isset($_POST["proofCLASH2"]) &&
-    isset($_POST["proofCLASH3"]) &&
-    isset($_POST["emailCLASH1"]) &&
-    isset($_POST["emailCLASH2"]) &&
-    isset($_POST["emailCLASH3"])
-  ) {
-    $nameCLASH1 = $_POST['nameCLASH1'];
-    $nameCLASH2 = $_POST['nameCLASH2'];
-    $nameCLASH3 = $_POST['nameCLASH3'];
-
-    $nickCLASH1 = $_POST['nickCLASH1'];
-    $nickCLASH2 = $_POST['nickCLASH2'];
-    $nickCLASH3 = $_POST['nickCLASH3'];
-
-    $cpfCLASH1 = $_POST['cpfCLASH1'];
-    $cpfCLASH2 = $_POST['cpfCLASH2'];
-    $cpfCLASH3 = $_POST['cpfCLASH3'];
-
-    $raCLASH1 = $_POST['raCLASH1'];
-    $raCLASH2 = $_POST['raCLASH2'];
-    $raCLASH3 = $_POST['raCLASH3'];
-
-    $proofCLASH1 = $_POST['proofCLASH1'];
-    $proofCLASH2 = $_POST['proofCLASH2'];
-    $proofCLASH3 = $_POST['proofCLASH3'];
-
-    $emailCLASH1 = $_POST['emailCLASH1'];
-    $emailCLASH2 = $_POST['emailCLASH2'];
-    $emailCLASH3 = $_POST['emailCLASH3'];
-  }
-
-/*
-
-$sql = "insert into jogador_csgo
-      (cpf_csgo, nome_csgo, email_csgo, comprovante_matricula_csgo, steam_link, id_equipe, ra_csgo)
-        values  (?,?,?,?,?,?,?)";
-$id_equipe = 1;
-if ($stmt = mysqli_prepare($conn, $sql)) {
-
-  // bind parameters for markers
-  mysqli_stmt_bind_param($stmt, "sssssis", $_POST["CPFCS1"], $_POST["nameCS1"], $_POST["emailCS1"], $_POST["proofCS1"], $_POST["steam-linkCS1"], $id_equipe, $_POST["raCS1"]);
-
-  // execute query
-  mysqli_stmt_execute($stmt);
-
-  // close statement
-  mysqli_stmt_close($stmt);
-  //header("Location: ../view/index.php");
-}*/
+  echo "Cadastro efetuado";
+  header("Location: ../view/?cadastroComSucesso=true");
+} catch (Exception $e) {
+  echo $e;
+}
 
 ?>

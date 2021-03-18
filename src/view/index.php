@@ -2,6 +2,10 @@
 session_start();
 require_once 'partials/header.php';
 require_once 'partials/carousel.php';
+
+if (isset($_GET["cadastroComSucesso"])) {
+    echo "<script>alert('Inscrição efetuada com sucesso!')</script>";
+}
 ?>
 
 <!-- Content-->

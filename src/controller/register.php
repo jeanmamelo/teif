@@ -19,6 +19,7 @@ try {
             (isset($_POST["name"]) &&
                 isset($_POST["email"]) &&
                 isset($_POST["password"]) &&
+                isset($_POST["phone"]) &&
                 isset($_POST["cpf"])))
         )
         {
@@ -30,6 +31,7 @@ try {
             $representative_email    = $_POST['email'];
             $representative_password = md5($_POST['password']);
             $representative_cpf      = (int)$_POST['cpf'];
+            $representative_phone      = (int)$_POST['phone'];
 
             /**
              * Afected database:
@@ -44,18 +46,19 @@ try {
              * email
              * senha
              */
-            $query = 'INSERT INTO representante (cpf_representante, nome, email, senha)
-            VALUES (?, ?, ?, ?)';
+            $query = 'INSERT INTO representante (cpf_representante, nome, email, senha, celular)
+            VALUES (?, ?, ?, ?, ?)';
 
             if ($stmt = mysqli_prepare($conn, $query))
             {
                 // bind parameters for markers
                 mysqli_stmt_bind_param($stmt,
-                    'ssss',
+                    'sssss',
                     $representative_cpf,
                     $representative_name,
                     $representative_email,
-                    $representative_password
+                    $representative_password,
+                    $representative_phone
                 );
 
                 // execute query

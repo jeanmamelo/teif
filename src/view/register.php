@@ -33,6 +33,9 @@ require_once 'partials/head.php';
 
                     <label hidden for="cpf">CPF</label>
                     <input type="text" name="cpf" id="cpf" placeholder="CPF" pattern="[0-9]{11}" minlength="11" maxlength="11" required>
+                    
+                    <label hidden for="phone">Celular</label>
+                    <input type="text" name="phone" id="phone" placeholder="Celular" pattern="[0-9]{11}" minlength="11" maxlength="11" required>
 
                     <p> Já possiu uma conta? <a class="under" href="login"> Logue-se </a></p>
 

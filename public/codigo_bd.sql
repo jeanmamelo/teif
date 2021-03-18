@@ -12,13 +12,13 @@ create table representante(
 cpf_representante varchar(30) NOT NULL,
 nome varchar(60) NOT NULL,
 email varchar(60) NOT NULL,
-celular int NULL,
+celular varchar(12) NOT NULL,
 senha varchar(100) NOT NULL,
 primary key(cpf_representante)
 )default charset = utf8mb4;
 
 create table equipe(
-id_equipe int NOT NULL ,
+id_equipe int NOT NULL AUTO_INCREMENT,
 nome_equipe varchar(30) NOT NULL,
 sigla varchar(7) NOT NULL,
 faculdade varchar(30) NOT NULL,
