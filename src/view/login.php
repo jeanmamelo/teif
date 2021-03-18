@@ -1,6 +1,16 @@
 <?php
 session_start();
 require_once 'partials/head.php';
+
+if (isset($_SESSION['sucessoCadastro'])){
+    
+    if ($_SESSION['sucessoCadastro'] === true){
+        echo "<script>alert('Cadastro realizado!');</script>";
+    } else {
+        echo "<script>alert('Erro no cadastro!');</script>";
+    }
+    unset($_SESSION['sucessoCadastro']);
+}
 ?>
 
 <body>

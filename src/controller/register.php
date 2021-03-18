@@ -1,5 +1,9 @@
 <?php
+session_start();
+
 include_once '../model/conexao.php';
+
+$_SESSION['sucessoCadastro'] = true;
 
 /**
  * Cadastro inicial/representante
@@ -55,7 +59,11 @@ try {
                 );
 
                 // execute query
-                mysqli_stmt_execute($stmt);
+                if (mysqli_stmt_execute($stmt)){
+                    $_SESSION['sucessoCadastro'] = true;
+                } else {
+                    $_SESSION['sucessoCadastro'] = false;
+                }
 
                 // close statement
                 mysqli_stmt_close($stmt);
@@ -65,6 +73,8 @@ try {
 
                 header('Location: ../view/login');
                 // die('cadastro realizado com sucesso'); // tratar com echo, throw exception, etc...
+            } else {
+                $_SESSION['sucessoCadastro'] = false;
             }
         }
     }
